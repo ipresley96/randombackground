@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .change{
+           padding: .75rem;
+           border: none;
+           border-radius: 10px;
+           background-color: black;
+           color: white;
+        }
+
+        .change:hover{
+            opacity: .8;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const body = document.querySelector('body')
+        const btn = document.createElement('button')
+        btn.className = 'change'
+        btn.textContent = 'Change Background'
+        body.appendChild(btn)
+    
+
+        const change = document.querySelector('.change');
+        let background = document.querySelector('body');
+
+
+        change.addEventListener('click', () => {
+            let red = Math.floor(Math.random() * 255)
+            let green = Math.floor(Math.random() * 255)
+            let blue = Math.floor(Math.random() * 255)
+            console.log(red)
+            return background.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`
+        });
+    </script>
+</body>
+</html>
